@@ -1,7 +1,8 @@
 <template lang="html">
     <div class="public">
         <div class="columns">
-            <div class="column">
+            <div class="column"
+                v-if="display">
                 <div class="padding">
                     <h1 class="title is-1"
                         v-text="$route.name"></h1>
@@ -20,6 +21,11 @@ import {
 } from '../vuex/actions'
 
 export default {
+    data () {
+        return {
+            display: false
+        }
+    },
     vuex: {
         actions: {
             setUser: setUser
@@ -35,6 +41,8 @@ export default {
                     this.setUser(res.data.user)
                     localStorage.setItem('email', res.data.user.email)
                     this.$router.go({ name: 'Dashboard'})
+                } else {
+                    this.display = true
                 }
             }, function (err) {
                 console.log(err)
