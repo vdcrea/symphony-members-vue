@@ -11,3 +11,38 @@
         </div>
     </div>
 </template>
+
+
+<script>
+import api from '../Api'
+import {
+    setUser
+} from '../vuex/actions'
+
+export default {
+    vuex: {
+        actions: {
+            setUser: setUser
+        }
+    },
+    methods: {
+        getMemberFromCookie() {
+            this.$http({
+                url: api.member,
+                method: 'GET'
+            }).then(function (res) {
+                if (res.data.event.success) {
+                    this.setUser(res.data.user)
+                    localStorage.setItem('email', res.data.user.email)
+                    this.$router.go({ name: 'Dashboard'})
+                }
+            }, function (err) {
+                console.log(err)
+            });
+        }
+    },
+    created() {
+        this.getMemberFromCookie()
+    }
+}
+</script>
