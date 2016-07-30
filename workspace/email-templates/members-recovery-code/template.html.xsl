@@ -24,7 +24,7 @@
 									<!-- <img src="{$workspace}/assets/img/xxx.jpg" /><br/> -->
 									Hello <xsl:value-of select="data/members-notifications/entry/email/@alias"/>,</h1>
 								<p>Here is a link to reset your <xsl:value-of select="$website-name"/> password.</p>
-								<a href="{$root}/reset-password/{data/members-notifications/entry/email}/{data/members-notifications/entry/password/recovery-code}" style="display: block; padding: 5px 0px 7px 0px; background: #009ee2; color: #fff; text-decoration: none;">Reset my password</a>
+								<a href="{$root}/reset-password/{data/members-notifications/entry/email}/{data/members-notifications/entry/password/recovery-code}" style="display: block; padding: 5px 0px 7px 0px; background: #1fc8db; color: #fff; text-decoration: none;">&#160;Reset my password&#160;</a>
 							</td>
 						</tr>
 					</table>

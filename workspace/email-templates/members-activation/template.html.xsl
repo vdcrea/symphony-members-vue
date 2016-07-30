@@ -24,7 +24,7 @@
 									<!-- <img src="{$workspace}/assets/img/xxx.jpg" /><br/> -->
 									Hello <xsl:value-of select="data/members-notifications/entry/email/@alias"/>,</h1>
 								<p>Welcome to <xsl:value-of select="$website-name"/>, please activate your account</p>
-								<a href="{$root}/activation/{data/members-notifications/entry/email}/{data/members-notifications/entry/activation/code}" style="display: block; padding: 5px 0px 7px 0px; background: #009ee2; color: #fff; text-decoration: none;">Activate my account</a>
+								<a href="{$root}/activation/{data/members-notifications/entry/email}/{data/members-notifications/entry/activation/code}" style="display: block; padding: 5px 0px 7px 0px; background: #1fc8db; color: #fff; text-decoration: none;">&#160;Activate my account&#160;</a>
 							</td>
 						</tr>
 					</table>
