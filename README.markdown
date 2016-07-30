@@ -7,10 +7,11 @@ Check out how to install [Symphony CMS](https://github.com/symphonycms/symphony-
 
 Open `manifest/config.php` with a code editor and find `'http-response-header-mappings'`. Add `'alloworigins' => 'Access-Control-Allow-Origin: *',` only during the dev to let you use webpack hot reload, remove it for prod.
 
-Open `vue` folder with terminal. Type `npm install` then `npm run build`. Type `npm run dev` for front end dev with webpack.
-
 Fill in all symphony preferences needed (email gateway, members).
 
+Open `vue` folder with terminal. Type `npm install` then `npm run build`. Type `npm run dev` for front end dev with webpack.
+
+Open `vue/src/Api.js` with a code editor and change your root and member sections.
 
 Notes
 ---

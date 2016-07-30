@@ -1,4 +1,4 @@
-var root = 'http://symphony-members-vue:8888/'
+var root = 'http://yourdomain.com/'
 var api = root + 'api/'
 
 export default {
