@@ -1,8 +1,7 @@
 <template lang="html">
     <div class="public">
         <div class="columns">
-            <div class="column"
-                v-if="display">
+            <div class="column">
                 <div class="padding">
                     <h1 class="title is-1"
                         v-text="$route.name"></h1>
