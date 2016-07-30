@@ -20,7 +20,7 @@
                         </p>
                         <p class="control">
                             <input class="input"
-                                :type="[checkPassword ? 'text' : 'password']"
+                                :type="[fields.checkPassword ? 'text' : 'password']"
                                 placeholder="Password"
                                 v-model="fields.password" />
                         </p>
