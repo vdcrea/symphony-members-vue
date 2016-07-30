@@ -21,11 +21,6 @@ import {
 } from '../vuex/actions'
 
 export default {
-    data () {
-        return {
-            display: false
-        }
-    },
     vuex: {
         actions: {
             setUser: setUser
@@ -40,9 +35,6 @@ export default {
                 if (res.data.event.success) {
                     this.setUser(res.data.user)
                     localStorage.setItem('email', res.data.user.email)
-                    this.$router.go({ name: 'Dashboard'})
-                } else {
-                    this.display = true
                 }
             }, function (err) {
                 console.log(err)
