@@ -84,7 +84,7 @@ export default {
                 if (res.data.event.success) {
                     this.setUser(res.data.user)
                     localStorage.setItem('email', res.data.user.email)
-                    this.$router.go({ name: 'Dashboard'})
+                    this.$router.go({ name: api.loginRoute })
                 } else {
                     this.display = true
                     this.res = res.data.event

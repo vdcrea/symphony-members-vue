@@ -139,7 +139,7 @@ export default {
                 if (res.data.event.success) {
                     this.setUser(res.data.user)
                     localStorage.setItem('email', res.data.user.email)
-                    this.$router.go({ name: 'Dashboard'})
+                    this.$router.go({ name: api.loginRoute })
                 } else {
                     this.display = true
                     if (res.data.user && (res.data.user.banned || res.data.user.blacklisted) ) {
@@ -178,7 +178,7 @@ export default {
                     if (res.data.event.success) {
                         this.setUser(res.data.user)
                         localStorage.setItem('email', res.data.user.email)
-                        this.$router.go({ name: 'Dashboard'})
+                        this.$router.go({ name: api.loginRoute })
                     } else {
                         if (res.data.user && (res.data.user.banned || res.data.user.blacklisted) ) {
                             this.blocked = true

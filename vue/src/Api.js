@@ -6,5 +6,7 @@ export default {
     memberSection: 1,
     // api endpoints
     member: api + 'member/',
-    access: api + 'access/'
+    access: api + 'access/',
+    // login redirect route
+    loginRoute: 'Dashboard'
 }

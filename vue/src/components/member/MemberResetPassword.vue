@@ -14,7 +14,7 @@
                         <p class="control">
                             <input class="input"
                                 :type="[fields.checkPassword ? 'text' : 'password']"
-                                placeholder="Password"
+                                placeholder="New password"
                                 v-model="fields.password" />
                         </p>
                         <p class="control">
@@ -61,6 +61,7 @@ export default {
     data() {
         return {
             apiCall: false,
+            blocked: false,
             res: {
                 messages: []
             },
@@ -114,22 +115,41 @@ export default {
                     method: 'POST',
                     beforeSend: this.toggleApiCall()
                 }).then(function (res) {
-                    this.toggleApiCall()
                     if (res.data.event.success) {
-                        this.setUser(res.data.user)
-                        localStorage.setItem('email', res.data.user.email)
-                        this.$router.go({ name: 'Dashboard'})
+                        this.getMember()
                     } else {
                         if (res.data.user && (res.data.user.banned || res.data.user.blacklisted) ) {
                             this.blocked = true
                         }
+                        this.toggleApiCall()
                         this.res = res.data.event
                     }
                 }, function (err) {
-                    console.log(err)
                     this.toggleApiCall()
+                    console.log(err)
                 });
             }
+        },
+        getMember() {
+            this.$http({
+                url: api.member,
+                method: 'GET'
+            }).then(function (res) {
+                this.toggleApiCall()
+                if (res.data.event.success) {
+                    this.setUser(res.data.user)
+                    localStorage.setItem('email', res.data.user.email)
+                    this.$router.go({ name: api.loginRoute })
+                } else {
+                    if (res.data.user && (res.data.user.banned || res.data.user.blacklisted) ) {
+                        this.blocked = true
+                    }
+                    this.res = res.data.event
+                }
+            }, function (err) {
+                this.toggleApiCall()
+                console.log(err)
+            });
         }
     }
 }

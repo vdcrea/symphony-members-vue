@@ -77,7 +77,6 @@ export default {
         },
         postGenerateRecoveryCode() {
             var postGenerateRecoveryCodeData = {
-                MAX_FILE_SIZE: 5242880,
                 members_section_id: api.memberSection,
                 fields: {
                     email: this.fields.email
