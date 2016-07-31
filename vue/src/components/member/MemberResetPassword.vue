@@ -65,8 +65,7 @@ export default {
                 messages: []
             },
             fields: {
-                password: '',
-                checkPassword: false
+                password: ''
             }
         }
     },

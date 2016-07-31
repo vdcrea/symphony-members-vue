@@ -74,8 +74,7 @@ export default {
             },
             fields: {
                 email: '',
-                password: '',
-                checkPassword: false,
+                password: ''
             }
         }
     },

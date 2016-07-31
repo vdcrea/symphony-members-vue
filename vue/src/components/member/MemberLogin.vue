@@ -89,7 +89,6 @@ export default {
             res: {},
             fields: {
                 email: '',
-                checkPassword: false,
                 password: ''
             }
         }
