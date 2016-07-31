@@ -19,7 +19,7 @@
                         </p>
                         <p class="control">
                             <label class="checkbox"
-                                :class="{ 'is-disabled': !passwordTyped && !fields.checkPassword ">
+                                :class="{ 'is-disabled': !passwordTyped ">
                                 <input type="checkbox"
                                     v-model="fields.checkPassword">
                                 Show password
@@ -82,6 +82,7 @@ export default {
             if (this.fields.password) {
                 return true
             } else {
+                this.fields.checkPassword = false
                 return false
             }
         }
