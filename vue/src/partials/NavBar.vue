@@ -43,7 +43,7 @@
             Register
         </a>
         <a  class="nav-item is-tab"
-            v-link="{ name: 'Login' }">
+            v-link="{ name: 'Log in' }">
             Log in
         </a>
     </div>

@@ -41,7 +41,7 @@ router.map({
 		auth: true
 	},
 	'/login': {
-	    name:'Login',
+	    name: 'Log in',
 	    component: MemberLogin
 	},
 	'/register': {

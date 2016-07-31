@@ -39,7 +39,7 @@
                         </p>
                         <p class="control">
                             <a class="button is-link is-small"
-                                v-link="{ name: 'Login' }">Already registered? Login</a>
+                                v-link="{ name: 'Log in' }">Already registered? Log in</a>
                         </p>
                     </form>
 
