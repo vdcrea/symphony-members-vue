@@ -2,7 +2,7 @@
     <div class="logout padding-top">
         <a class="button is-primary"
             v-if="user.logged"
-            @click.prevent="logout">Logout</a>
+            @click.prevent="logout">Log out</a>
     </div>
 </template>
 
