@@ -5,7 +5,7 @@ Install
 
 Check out how to install [Symphony CMS](https://github.com/symphonycms/symphony-2)
 
-Open `manifest/config.php` with a code editor and find `'http-response-header-mappings'`. Add `'alloworigins' => 'Access-Control-Allow-Origin: *',` only during the dev to let you use webpack hot reload, remove it for prod.
+Pages from Symphony are used as an API response, so page type is `JSON` (add `alloworigins` to all your pages only during dev, to let webpack server access your local install, remove this type for production).
 
 Fill in all symphony preferences needed (email gateway, members).
 
@@ -30,6 +30,7 @@ Issues with webpack server (only dev, no issue with built version):
 
 - `@` in url sometimes fails, so 3 routes using emails in parameters needs to be tested with built version, not webpack dev server.
 
+Check if `manifest/config.php` `'http-response-header-mappings'` contains `'alloworigins' => 'Access-Control-Allow-Origin: *'` for dev with webpack.
 
 Vue Plugins
 ---
