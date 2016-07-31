@@ -51,7 +51,8 @@
 
 <script>
 import api from '../../Api'
-import getAccess from '../../mixins/getAccess'
+import mixinGetAccess from '../../mixins/getAccess'
+import mixinPasswordTyped from '../../mixins/passwordTyped'
 import {
     setUser
 } from '../../vuex/actions'
@@ -77,14 +78,6 @@ export default {
             } else {
                 return false
             }
-        },
-        passwordTyped() {
-            if (this.fields.password) {
-                return true
-            } else {
-                this.fields.checkPassword = false
-                return false
-            }
         }
     },
     vuex: {
@@ -92,7 +85,7 @@ export default {
             setUser: setUser
         }
     },
-    mixins: [getAccess],
+    mixins: [mixinGetAccess, mixinPasswordTyped],
     methods: {
         closeAlert(i) {
             this.res.messages.splice(i,1);

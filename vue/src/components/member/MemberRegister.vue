@@ -62,7 +62,8 @@
 
 <script>
 import api from '../../Api'
-import getAccess from '../../mixins/getAccess'
+import mixinGetAccess from '../../mixins/getAccess'
+import mixinPasswordTyped from '../../mixins/passwordTyped'
 
 export default {
     data () {
@@ -78,16 +79,8 @@ export default {
             }
         }
     },
-    mixins: [getAccess],
+    mixins: [mixinGetAccess, mixinPasswordTyped],
     computed: {
-        passwordTyped() {
-            if (this.fields.password) {
-                return true
-            } else {
-                this.fields.checkPassword = false
-                return false
-            }
-        },
         enableSubmit() {
             if (this.fields.email
                 && this.fields.password

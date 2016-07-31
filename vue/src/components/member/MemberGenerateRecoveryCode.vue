@@ -43,7 +43,7 @@
 
 <script>
 import api from '../../Api'
-import getAccess from '../../mixins/getAccess'
+import mixinGetAccess from '../../mixins/getAccess'
 
 export default {
     data() {
@@ -67,7 +67,7 @@ export default {
             }
         }
     },
-    mixins: [getAccess],
+    mixins: [mixinGetAccess],
     methods: {
         closeAlert(i) {
             this.res.messages.splice(i,1);

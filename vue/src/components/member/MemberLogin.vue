@@ -74,6 +74,8 @@
 <script>
 import api from '../../Api'
 import MemberLogout from './MemberLogout'
+import mixinPasswordTyped from '../../mixins/passwordTyped'
+
 import {
     setUser
 } from '../../vuex/actions'
@@ -103,14 +105,6 @@ export default {
                 return false
             }
         },
-        passwordTyped() {
-            if (this.fields.password) {
-                return true
-            } else {
-                this.fields.checkPassword = false
-                return false
-            }
-        },
         forgotPasswordParam() {
             if (this.fields.email) {
                 return this.fields.email
@@ -127,6 +121,7 @@ export default {
             user: state => state.user
         }
     },
+    mixins: [mixinPasswordTyped],
     components: {
         MemberLogout
     },
