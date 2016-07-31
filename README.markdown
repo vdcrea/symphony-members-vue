@@ -7,7 +7,7 @@ Check out how to install [Symphony CMS](https://github.com/symphonycms/symphony-
 
 Pages from Symphony are used as an API response, so page type is `JSON` (add `alloworigins` to all your pages only during dev, to let webpack server access your local install, remove this type for production).
 
-Fill in all symphony preferences needed (email gateway, members).
+Fill in all symphony preferences needed (email gateway, members section, member roles: allow to create new for public role).
 
 Open `vue` folder with terminal. Type `npm install` then `npm run build`. Type `npm run dev` for front end dev with webpack.
 
