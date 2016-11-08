@@ -19,7 +19,7 @@
                         </p>
                         <p class="control">
                             <label class="checkbox"
-                                :class="{ 'is-disabled': !passwordTyped ">
+                                :class="{ 'is-disabled': !passwordTyped }">
                                 <input type="checkbox"
                                     v-model="fields.checkPassword">
                                 Show password
